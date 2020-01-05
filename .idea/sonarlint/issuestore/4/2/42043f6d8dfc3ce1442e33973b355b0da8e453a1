@@ -1,6 +1,2 @@
 
-Fsquid:S1481"(Remove this unused "arr" local variable.(ΈΖϊ±8λι©εφ-
-_squid:HiddenFieldCheck"6Rename "arr" which hides the field declared at line 6.(ΈΖϊ±8λι©εφ-
-Hsquid:S1481"*Remove this unused "array" local variable.(υδ·8λι©εφ-
-Usquid:S1854"7Remove this useless assignment to local variable "arr".(ΈΖϊ±8λι©εφ-
-Wsquid:S1854"9Remove this useless assignment to local variable "array".(υδ·8λι©εφ-
+‰"squid:ClassVariableVisibilityCheck"OMake arr a static final constant or non-public and provide accessors if needed.(Ò‚Ο³ύÿÿÿÿ8›““‚χ-
