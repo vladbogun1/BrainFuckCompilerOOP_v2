@@ -30,14 +30,16 @@ public class CompilerTest {
                                         new IncrementCommand(),
                                         new IncrementCommand()
                                 )
-                        )},
+                        )
+                },
                 {"-+",
                         new ArrayList<>(
                                 Arrays.asList(
                                         new DecrementCommand(),
                                         new IncrementCommand()
                                 )
-                        )},
+                        )
+                },
                 {"", new ArrayList<>()}
         });
     }
