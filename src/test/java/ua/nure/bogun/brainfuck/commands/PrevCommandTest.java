@@ -15,7 +15,7 @@ import java.util.Collection;
 import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
-public class NextCommandTest {
+public class PrevCommandTest {
     private int input;
     private String expected;
     private final ByteArrayOutputStream OUTPUT_OUT = new ByteArrayOutputStream();
@@ -24,7 +24,7 @@ public class NextCommandTest {
     private final PrintStream ORIGIN_ERR = System.err;
     private static final String SEPARATOR = System.lineSeparator();
 
-    public NextCommandTest(int input, String expected) {
+    public PrevCommandTest(int input, String expected) {
         this.input = input;
         this.expected = expected;
     }
@@ -52,22 +52,23 @@ public class NextCommandTest {
     }
 
     @Test
-    public void testExecuteNextMethod() {
-        NextCommand nextCommand = new NextCommand();
+    public void testExecutePrevMethod() {
+        PrevCommand prevCommand = new PrevCommand();
         IncrementCommand incrementCommand = new IncrementCommand();
         PrintCommand printCommand = new PrintCommand();
 
+        prevCommand.execute();
 
 
         incrementCommand.setCount(input+1);
         incrementCommand.execute();
         printCommand.execute();
-        nextCommand.execute();
+        prevCommand.execute();
         incrementCommand.setCount(input);
         incrementCommand.execute();
         printCommand.execute();
 
-        assertEquals("NextCommand execution failed", expected, OUTPUT_OUT.toString());
+        assertEquals("PrevCommand execution failed", expected, OUTPUT_OUT.toString());
         Memory.removeInstance();
         OUTPUT_OUT.reset();
         OUTPUT_ERR.reset();
