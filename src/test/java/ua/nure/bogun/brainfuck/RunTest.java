@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import ua.nure.bogun.brainfuck.commands.DecrementCommandTest;
 import ua.nure.bogun.brainfuck.commands.IncrementCommandTest;
+import ua.nure.bogun.brainfuck.commands.NextCommandTest;
 import ua.nure.bogun.brainfuck.commands.PrintCommandTest;
 
 @RunWith(Suite.class)
@@ -17,7 +18,8 @@ import ua.nure.bogun.brainfuck.commands.PrintCommandTest;
         ContextTest.class,
         DecrementCommandTest.class,
         IncrementCommandTest.class,
-        PrintCommandTest.class
+        PrintCommandTest.class,
+        NextCommandTest.class
 })
 
 public class RunTest extends Assert {

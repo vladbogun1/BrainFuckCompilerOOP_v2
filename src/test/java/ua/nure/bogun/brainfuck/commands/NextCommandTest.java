@@ -15,7 +15,7 @@ import java.util.Collection;
 import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
-public class PrintCommandTest {
+public class NextCommandTest {
     private int input;
     private String expected;
     private final ByteArrayOutputStream OUTPUT_OUT = new ByteArrayOutputStream();
@@ -24,7 +24,7 @@ public class PrintCommandTest {
     private final PrintStream ORIGIN_ERR = System.err;
     private static final String SEPARATOR = System.lineSeparator();
 
-    public PrintCommandTest(int input, String expected) {
+    public NextCommandTest(int input, String expected) {
         this.input = input;
         this.expected = expected;
     }
@@ -44,23 +44,30 @@ public class PrintCommandTest {
     @Parameterized.Parameters
     public static Collection programs() {
         return Arrays.asList(new Object[][]{
-                {74, "J"},
-                {82, "R"},
-                {99, "c"},
-                {115, "s"}
-
+                {74, "KJ"},
+                {82, "SR"},
+                {99, "dc"},
+                {64, "A@"}
         });
     }
 
     @Test
-    public void testExecutePrintMethod() {
+    public void testExecuteNextMethod() {
+        NextCommand nextCommand = new NextCommand();
         IncrementCommand incrementCommand = new IncrementCommand();
+        PrintCommand printCommand = new PrintCommand();
+
+
+
+        incrementCommand.setCount(input+1);
+        incrementCommand.execute();
+        printCommand.execute();
+        nextCommand.execute();
         incrementCommand.setCount(input);
         incrementCommand.execute();
-
-        PrintCommand printCommand = new PrintCommand();
         printCommand.execute();
-        assertEquals("PrintCommand execution failed", expected, OUTPUT_OUT.toString());
+        
+        assertEquals("NextCommand execution failed", expected, OUTPUT_OUT.toString());
         Memory.removeInstance();
         OUTPUT_OUT.reset();
         OUTPUT_ERR.reset();
