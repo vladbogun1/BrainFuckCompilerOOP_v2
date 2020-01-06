@@ -54,6 +54,7 @@ public class CompilerTest {
                     expectedCommand.getClass(),
                     outputCommand.getClass()
             );
+            Memory.removeInstance();
         }
     }
 }
