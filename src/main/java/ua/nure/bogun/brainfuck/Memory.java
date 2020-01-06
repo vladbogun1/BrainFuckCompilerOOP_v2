@@ -30,6 +30,13 @@ public class Memory {
     }
 
     /**
+     * Method to remove instance of created memory
+     */
+    public static synchronized void removeInstance() {
+        instance = null;
+    }
+
+    /**
      * @return getter for current position in memory
      */
     public int getPointer() {

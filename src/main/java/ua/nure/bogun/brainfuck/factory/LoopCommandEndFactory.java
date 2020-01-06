@@ -2,6 +2,7 @@ package ua.nure.bogun.brainfuck.factory;
 
 import ua.nure.bogun.brainfuck.Context;
 import ua.nure.bogun.brainfuck.commands.Command;
+import ua.nure.bogun.brainfuck.commands.LoopBeginCommand;
 import ua.nure.bogun.brainfuck.commands.LoopCommand;
 
 import java.util.ArrayList;
@@ -50,9 +51,9 @@ public class LoopCommandEndFactory implements CommandFactory {
      * @return start position of loop in context list
      */
     private int getStartPointer(){
-        Stack<LoopCommandBeginFactory> loopBeginStack = context.getLoopStack();
-        if(loopBeginStack.size()>0){
-            LoopCommandBeginFactory start = loopBeginStack.pop();
+        Stack<LoopBeginCommand> loopBeginStack = context.getLoopStack();
+        if(!loopBeginStack.isEmpty()){
+            LoopBeginCommand start = loopBeginStack.pop();
             return start.getPosition();
         }
         return -1;

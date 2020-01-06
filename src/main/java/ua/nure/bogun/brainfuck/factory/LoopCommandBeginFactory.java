@@ -2,6 +2,7 @@ package ua.nure.bogun.brainfuck.factory;
 
 import ua.nure.bogun.brainfuck.Context;
 import ua.nure.bogun.brainfuck.commands.Command;
+import ua.nure.bogun.brainfuck.commands.LoopBeginCommand;
 
 /**
  * Factory class for Loop command
@@ -11,7 +12,7 @@ import ua.nure.bogun.brainfuck.commands.Command;
  */
 public class LoopCommandBeginFactory implements CommandFactory {
     private Context context;
-    private int position;
+
     public LoopCommandBeginFactory(Context context){
         this.context = context;
     }
@@ -20,16 +21,13 @@ public class LoopCommandBeginFactory implements CommandFactory {
      * put this class object into context stack
      */
     @Override
-    public Command createCommand() {
-        position = context.getCommandsListPointer();
-        context.getLoopStack().push(this);
+    public Command createCommand()  {
+        int position = context.getCommandsListPointer();
+        LoopBeginCommand command = new LoopBeginCommand(position);
+        context.getLoopStack().push(command);
         return null;
     }
 
-    /**
-     * @return stored position of loop beginning
-     */
-    public int getPosition(){
-        return position;
-    }
+
+
 }
