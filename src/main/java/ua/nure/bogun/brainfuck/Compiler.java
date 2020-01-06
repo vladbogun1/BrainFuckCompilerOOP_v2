@@ -19,7 +19,7 @@ public class Compiler {
     public Compiler(String programString) {
         context = new Context();
         setLexemes();
-        char[] programCommands = StringToChars(programString);
+        char[] programCommands = stringToChars(programString);
         readCommands(programCommands);
     }
 
@@ -29,7 +29,7 @@ public class Compiler {
      * if string is null, empty char array will be also created
      * @return char array
      */
-    private char[] StringToChars(String string){
+    private char[] stringToChars(String string){
         char[] charArr;
         try {
             charArr = string.toCharArray();

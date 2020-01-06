@@ -11,6 +11,10 @@ import java.util.List;
  */
 public class Executor {
     private List<Command> commands;
+
+    /**
+     * @param commands List of commands that need to be executed
+     */
     public Executor(List<Command> commands){
         this.commands = commands;
     }
@@ -22,5 +26,6 @@ public class Executor {
         for (Command command : commands) {
             command.execute();
         }
+        Memory.removeInstance();
     }
 }

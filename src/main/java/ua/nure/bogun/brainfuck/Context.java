@@ -1,7 +1,7 @@
 package ua.nure.bogun.brainfuck;
 
 import ua.nure.bogun.brainfuck.commands.Command;
-import ua.nure.bogun.brainfuck.factory.LoopCommandBeginFactory;
+import ua.nure.bogun.brainfuck.commands.LoopBeginCommand;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.Stack;
  */
 public class Context {
     private List<Command> commandsList;
-    private Stack<LoopCommandBeginFactory> loopStack;
+    private Stack<LoopBeginCommand> loopStack;
 
     Context(){
         this.commandsList = new ArrayList<>();
@@ -26,7 +26,7 @@ public class Context {
         return commandsList;
     }
 
-    public Stack<LoopCommandBeginFactory> getLoopStack() {
+    public Stack<LoopBeginCommand> getLoopStack() {
         return loopStack;
     }
 
