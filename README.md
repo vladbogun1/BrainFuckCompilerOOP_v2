@@ -2,10 +2,15 @@
 Java compiler from BrainFuck code to text
 <h3><b>What was required to do:</b></h3>
 1. Make SOLID.
+
 2. Give fine names to classes and parameters.
+
 3. Replace big switches and loops.
+
 4. Add Javadocks.
+
 5. Make parametrized junit tests.
+
 
 <h3><b>Run</b></h3>
 
