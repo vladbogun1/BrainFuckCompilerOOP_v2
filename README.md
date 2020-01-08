@@ -11,6 +11,12 @@ Java compiler from BrainFuck code to text
 
 5. Make parametrized junit tests.
 
+P.S. also i have new idea, but have not enough time to do that.
+Idea is that loop doesnt contains any commands, it just send execution pointer to the previous commands, and they execute again.
+
+Like: +++>[>>+++]++>
+
+            ^======|
 
 <h3><b>Run</b></h3>
 
