@@ -30,14 +30,16 @@ public class CompilerTest {
                                         new IncrementCommand(),
                                         new IncrementCommand()
                                 )
-                        )},
+                        )
+                },
                 {"-+",
                         new ArrayList<>(
                                 Arrays.asList(
                                         new DecrementCommand(),
                                         new IncrementCommand()
                                 )
-                        )},
+                        )
+                },
                 {"", new ArrayList<>()}
         });
     }
@@ -54,6 +56,7 @@ public class CompilerTest {
                     expectedCommand.getClass(),
                     outputCommand.getClass()
             );
+            Memory.removeInstance();
         }
     }
 }

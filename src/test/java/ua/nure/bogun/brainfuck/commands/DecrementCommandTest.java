@@ -3,6 +3,7 @@ package ua.nure.bogun.brainfuck.commands;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import ua.nure.bogun.brainfuck.Memory;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -45,5 +46,6 @@ public class DecrementCommandTest {
         char newItem = OUTPUT_OUT.toString().toCharArray()[0];
         OUTPUT_OUT.reset();
         assertEquals("DecrementCommand execution failed",oldItem-1,newItem);
+        Memory.removeInstance();
     }
 }

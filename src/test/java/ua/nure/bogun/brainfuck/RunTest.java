@@ -3,8 +3,7 @@ package ua.nure.bogun.brainfuck;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import ua.nure.bogun.brainfuck.commands.DecrementCommandTest;
-import ua.nure.bogun.brainfuck.commands.IncrementCommandTest;
+import ua.nure.bogun.brainfuck.commands.*;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
@@ -15,7 +14,10 @@ import ua.nure.bogun.brainfuck.commands.IncrementCommandTest;
         ExecutorTest.class,
         ContextTest.class,
         DecrementCommandTest.class,
-        IncrementCommandTest.class
+        IncrementCommandTest.class,
+        PrintCommandTest.class,
+        NextCommandTest.class,
+        LoopCommandTest.class
 })
 
 public class RunTest extends Assert {
